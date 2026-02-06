@@ -86,6 +86,7 @@ for i in z8[1:]:
 
 print("The biggest among the three numbers is:", local_max8)
 
-
+#Αρχείο: python_exercises_gr_if_else(1).pdf
+#Ολοκληρώθηκε η διαφάνεια ασκήσεων
 
 
