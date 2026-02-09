@@ -83,3 +83,46 @@ dummy_list[2] = "Kosmas"
 modified_mytuple = tuple(dummy_list)
 
 print(modified_mytuple)
+
+#Dictionaries
+#Einai san ta kanonika leksika -> kleidi - timi
+lista = ["Nikos",23,True,"Male",34]
+#Metafrazeis ti simainei i kathe timi
+student_dict = {
+    "name": "Nikos",
+    "age": 23,
+    "is_good_student": True,
+    "sex": "Male",
+    "vathmologia_Biologia": 34
+}
+print(student_dict)
+
+#Theloume na prosthesoume tis 3 vathomologies stis kvantikes mixanikes 1,2,3
+
+student_dict["vathmos_kvanto_3_teleautaies"] = [7,10,9]
+
+print(student_dict)
+
+student_dict["diagogi_glossa&mathimatika"] = ("artia","Metria") #Tuple epeidi den allazei pote
+
+print(student_dict)
+
+#Afairesi enos kleidiou mazi me tin timi
+
+del student_dict["sex"]
+
+print(student_dict)
+
+#Pop afairei opos kai i del pano alla sou epistrefei kai tin timi pou afairese
+onoma = student_dict.pop("name")
+print(onoma)
+
+#Allagi timis
+student_dict["age"] = 18
+
+print(student_dict)
+
+print(student_dict["age"])
+
+print("vathmologia_Biologia" in student_dict)
+print(34 in student_dict.values())
