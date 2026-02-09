@@ -6,13 +6,14 @@ def test_askhsh1 ():
     for i in range (q_num):
         num = float(input("vale arithmo"))
         z.append(num)
-    print(z[0])
-    print(z[-1])
-    z.insert(0, 100)
-    print(len(z))
-    z.pop(1)
+    # z = [1,2,3,4]
+    print(z[0]) #->1
+    print(z[-1]) #->4
+    z.insert(0, 100) #-> [100,1,2,3,4]
+    print(len(z)) # -> 5
+    z.pop(1) #-> [100,2,3,4]
     if 100 in z:
-        z.remove(100)
+        z.remove(100) #-> [2,3,4]
     print(z)
 
 test_askhsh1()

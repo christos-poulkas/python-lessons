@@ -57,3 +57,29 @@ print(lista)
 numbers = list(range(5))
 
 print(numbers)
+
+#Tuples (Pleiades)
+
+#Tuples -> epitrepetai na exoun oti data type thes esy px [1,2,"Kosmas",true,'c'].Den Mporeis na tis kaneis modify!!!!
+#         kai episis epitrepontai dyplotypa [1,1,"Kosmas","Kosmas"]
+
+mytuple = (2,4.0,"Kosmass",'k')
+
+print(mytuple)
+
+# Arithimisi to idio
+
+print(mytuple[0])
+print(mytuple[-1])
+
+#mytuple[1] = "Kosmas" !!!!Not possible because tuples cannot be modified
+
+#Oi tuples den exoun entoles giati den ginontai modify (oxi delete, no replace, no insert)
+#Ean thes na allaksis kati tin kaneis lista!!! kai meta ksana tuple
+
+dummy_list = list(mytuple)
+dummy_list[2] = "Kosmas"
+
+modified_mytuple = tuple(dummy_list)
+
+print(modified_mytuple)
