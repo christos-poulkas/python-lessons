@@ -60,6 +60,23 @@ students = {
         "year": 1
     }
 }
+names_lessons_grades_extract = {}
+
+for student_id, data in students.items():
+    name = data["name"]
+    lessons = data["lessons"]
+
+    names_lessons_grades_extract[name] = lessons #1. kanei vivliothiki tvn onomatvn kai mathhmatvn kai vatmhologivn
+
+print("Λεξικό με τα μαθήματα και βαθμούς:", names_lessons_grades_extract)
+
+mean_avg_dict = {}
+for name, grades in names_lessons_grades_extract.items():
+    mean = sum(grades.values())/len(grades)
+    mean_avg_dict[name] = mean
+print("Ακολουθεί λεξικό με τους μέσους όρους των μαθητών:", mean_avg_dict)
+
+
 
 #1. ftiakse ena dictionary me onoma tou mathhth kai th vathmologia tou sta mathhmata (key: onoma kai value: vathmologia)
 #2. ftiakse ena dictionary me onoma tou mathhth kai th mesh vathmologia tou se ola ta mathhamata

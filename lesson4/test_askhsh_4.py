@@ -30,18 +30,22 @@ def askhsh2():
     }
     mathhtes = list(students.keys())
     vathmoi = list(students.values())
+
     local_max = -1
     for i in mathhtes:
         if students[i] >= local_max:
             local_max = students[i]
+
     for i in mathhtes:
         if students[i] == local_max:
             print (i)
+
     freq_ex = 0
     for i in mathhtes:
         if students[i] >= 8:
             freq_ex += 1
     print (freq_ex)
+
     freq_kalos = 0
     for i in mathhtes:
         if students[i] >= 5 and students[i] <= 7:
