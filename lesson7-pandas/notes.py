@@ -57,3 +57,35 @@ print(df)
 
 df.to_csv("out.csv")
 df.to_excel("report.xlsx")
+
+data = {
+    "Company": ["Amazon","Tesla","Apple","Samsung"],
+    "Profit": [57,21,7,23],
+    "NumEmployers": [12,23,34,12]
+}
+
+df  = pd.DataFrame(data)
+
+print(df[df["NumEmployers"] > 20])
+
+print(df[df["Company"].str.contains("Samsung")]) # Einai to idio df["Company] == "Samsung"
+print(df[df["Company"].str.upper().str.startswith("A")])
+
+
+df = df.sort_values("Company",ascending = True)
+
+print(df)
+
+#Group By
+
+data = {
+    "Company": ["Amazon","Amazon","Apple","Amazon"],
+    "Profit": [57,21,7,23],
+    "NumEmployers": [12,23,34,12]
+}
+
+df  = pd.DataFrame(data)
+
+df = df.groupby("Company").sum()
+
+print(df)
