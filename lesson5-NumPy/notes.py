@@ -151,7 +151,7 @@ x_values = np.array([1,2,3])
 y_values = np.array([5,6,8])
 
 plt.plot(x_values,y_values)
-plt.show()
+#plt.show()
 
 x_values = np.array([1,2,3])
 y_values = np.array([1,2,3])
@@ -162,7 +162,7 @@ Z = X**2 + np.sqrt(Y) + np.sin(X**2 + np.cos(Y))
 fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
 ax.plot_surface(X,Y,Z)
-plt.show()
+#plt.show()
 
 x_values = np.linspace(-3, 3, 100)
 y_values = np.linspace(-3, 3, 100)
@@ -179,4 +179,91 @@ ax = fig.add_subplot(projection='3d')
 
 ax.plot_surface(X, Y, Z)
 
-plt.show()
+#plt.show()
+
+
+#Flip array - matrix
+
+arr = np.array([12,1,2,3])
+
+print(np.flip(arr))
+
+a = np.array([[1,2,3],
+             [2,3,4],
+              [1,2,4]])
+
+print(np.flip(a))
+print(np.flip(a,axis = 0))
+print(np.flip(a,axis = 1)) #Gia grammes flip
+
+#Flattering
+
+a = np.array([[1,2,3],
+             [2,3,4],
+              [1,2,4]])
+
+a = a.flatten()
+
+print(a)
+
+#Slicing
+
+a = np.array([[1,2,3],
+             [2,3,4],
+              [1,2,4]])
+print(a[a>=3])
+print(a[a%2 == 0])
+print(a[(a >3) & (a<5)]) #Dyo synthikes vazeis parenthesi
+
+print(a.max())
+print(a.min())
+print(a.sum())
+
+a = np.array([[1,2,3],
+             [2,3,4],
+              [1,2,4]])
+
+b = np.array([[1,2,3],
+             [2,3,4],
+              [1,2,4]])
+
+c = a + b # Element wise
+
+print(c) # Element wise
+
+c = a * b # Element wise
+
+print(c)
+
+#Unique:
+
+b = np.array([[1,2,3],
+             [2,3,4],
+              [1,2,4]])
+
+b = np.unique(b)
+
+print(b)
+
+#NumPy IO (Input & OutPut)
+
+b = np.array([[1,2,3],
+             [2,3,4],
+              [1,2,4]])
+
+np.save('my.txt',b)
+
+c = np.load('my.txt.npy')
+
+print(c)
+
+#Csv - Comma Seperated Values -> excel me komma alla xoris kelia
+b = np.array([[1,2,3],
+             [2,3,4],
+              [1,2,4]])
+
+np.savetxt('my.csv',b)
+
+c = np.loadtxt('my.csv')
+
+print(c)
