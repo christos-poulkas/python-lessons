@@ -47,6 +47,29 @@ df_customer["Ποσοστό_Καθυστερημένων_Εκκρεμών"] = (
     (df_customer["Α_Καθυστερημένων_Εκκρεμών"]  / df_customer["Count"]) * 100)
 print(df_customer)
 
+################################################
+#Count max period of loses days
+max_loses = {}
+for customer_id, groups in df.groupby("CustomerID"): # -> 2 apotelesmata 1) Lista ton onomaton ton CustomerId 2) Ola ta groups gia ton kathe pelati
+    groups = groups.sort_values("Date")
+    counter_days = 0
+    max_days = 0
+    for kerdos in groups["Κέρδος"]:
+        if kerdos < 0:
+            counter_days += 1
+            max_days = max(max_days, counter_days) #Save the maximum streak
+        else:
+            counter_days = 0
+    max_loses[customer_id] = max_days
+
+print(max_loses)
+
+#Vazoume san stili to dictionary sto report
+
+loss_collumn = pd.Series(max_loses)
+df_customer["days_losses"] = loss_collumn
+print(df_customer)
+
 #####
 df_customer["Σύνθετο Ρίσκο"] = 0
 
