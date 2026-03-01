@@ -78,6 +78,7 @@ maskii = df_customer["Μέσο_Περιθώριο"] < 8
 maskiii = df_customer["Standard_Deviation_Margin"] > 20
 maskiv = df_customer["Revenue"] < 0
 maskv = df_customer["Α_Ανωμαλιών"] > 2
+mask_days = df_customer["days_losses"] > 10
 
 #βήμα δεύτερο - loc για να τοποθετηθεί στο ανάλογο κελί
 df_customer.loc[maski, "Σύνθετο Ρίσκο"] += 4
@@ -85,7 +86,7 @@ df_customer.loc[maskii, "Σύνθετο Ρίσκο"] += 3
 df_customer.loc[maskiii, "Σύνθετο Ρίσκο"] += 3
 df_customer.loc[maskiv, "Σύνθετο Ρίσκο"] += 6
 df_customer.loc[maskv, "Σύνθετο Ρίσκο"] += 5
-
+df_customer.loc[mask_days, "days_losses"] += 5
 print(df_customer)
 
 #################
